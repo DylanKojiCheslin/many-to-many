@@ -70,8 +70,13 @@ configureLinkableType = function(collection, model, type) {
 
   //get
 	addMethodToModel(collection, 'getLinked', upperCaseString, function(){
-		return LinkableModel.getCollectionForRegisteredType(type).find({
-      _id : {$in : this.links[type]}});
+    if (typeof this.links != 'undefined') {
+  		return LinkableModel.getCollectionForRegisteredType(type).find({
+        _id : {$in : this.links[type]}});
+    }else {
+      throw new Meteor.Error("no-links",
+      "There is no links for this model");
+    }
 	});
   //remove
   addMethodToModel(collection, 'remove', upperCaseString, function(linkID){
