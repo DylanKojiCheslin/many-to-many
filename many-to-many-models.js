@@ -54,11 +54,13 @@ configureLinkableType = function(collection, model, type) {
     };
     collection.appendSchema(schemaObject);
 	var upperCaseString = type.charAt(0).toUpperCase() + type.slice(1);
+  
   //add
 	addMethodToModel(collection, 'add', upperCaseString, function(linkID){
 	   addLinkToModel(this, linkID, schemaString);
   });
 
+  //link
   addMethodToModel(collection, 'link', upperCaseString, function(linkID){
     addLinkToModel(this, linkID, schemaString);
     var that = this;
@@ -78,6 +80,7 @@ configureLinkableType = function(collection, model, type) {
       "There is no links for this model");
     }
 	});
+
   //remove
   addMethodToModel(collection, 'remove', upperCaseString, function(linkID){
     var query = {};
