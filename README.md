@@ -92,6 +92,26 @@ smartyPants.linkBook(someBook.\_id);
 smartyPants.removeBook(someBook.\_id)
 smartyPants.getLinkedBook()
 ```
+##contrubuting to this package
+
+If you want to contribute, pleas do.
+
+1.clone the repo
+
+2.run it locally.
+
+you will need to export it to your shell.
+export PACKAGE_DIRS="$HOME/Documents/packs"
+"$HOME/Documents/packs" should be the directory that is above your clone.
+
+reference:
+https://themeteorchef.com/recipes/writing-a-package/#tmc-local-packages
+
+3.change things/fix bugs
+
+4.submit a pull request
+
+5.thanks for being awesome!
 
 ##Thanks
 
