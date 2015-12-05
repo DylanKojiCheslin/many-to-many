@@ -93,6 +93,15 @@ smartyPants.removeBook(someBook.\_id)
 smartyPants.getLinkedBook()
 ```
 
+##Thanks
+
+I want to give credit and thanks to cbranch101 for doing nearly all the coding
+for the initial version of this package.
+
+In addition to being a great programmer he is also a great person.
+
+https://github.com/cbranch101
+
 ## References
 
 an example app is available at:
