@@ -1,13 +1,13 @@
-# ManyToManyModels
+# many-to-many
 
 many-to-many is a Meteor Package allowing many to many data-model relationships.
 
-##Installation
+## Installation
 ```
 meteor add dylankoji:many-to-many
 ```
 
-##Creating a collection
+## Creating a collection
 
 ```
 Author = ManyModel.extendAndSetupCollection("author");
@@ -19,14 +19,14 @@ You may want to make a global reference to the backing collection of the model.
 AuthorCollection = Author.collection;
 ```
 
-##Registering the collection you want to link
+## Registering the collection you want to link
 
 ```
 Author.registerLinkableType(Book, "book");
 configureLinkableType(Author, Book, "book");
 ```
 
-##Adding a schema for the model
+## Adding a schema for the model
 
 You can optionally attach a SimpleSchema to the model
 
@@ -49,7 +49,7 @@ Author.appendSchema({
 ```
 
 
-##Functions of the ManyModel
+## Functions of the ManyModel
 
 The ManyModel dynamically creates functions for registered Types of models.
 All the functions that take a paramiter currntly take a Mongo \_id.
@@ -75,7 +75,7 @@ configureLinkableType(Book, Author, "author");
  ManyModel.getLinked\[type]() : Returns a cursor of all the models of that type
  that are linked to this instance of ManyModel.
 
-##how to use the functions
+## how to use the functions
 In a data context such a template helper or an event you can use "this":
 ```
 this.addBook(someBook.\_id);
@@ -92,7 +92,7 @@ smartyPants.linkBook(someBook.\_id);
 smartyPants.removeBook(someBook.\_id)
 smartyPants.getLinkedBook()
 ```
-##contrubuting to this package
+## contrubuting to this package
 
 If you want to contribute, pleas do.
 
@@ -113,7 +113,7 @@ https://themeteorchef.com/recipes/writing-a-package/#tmc-local-packages
 
 5.thanks for being awesome!
 
-##Thanks
+## Thanks
 
 I want to give credit and thanks to cbranch101 for doing nearly all the coding
 for the initial version of this package.
