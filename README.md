@@ -64,6 +64,8 @@ ManyModel.link\[type](otherModel.\_id) : Links a model instance to another
 model instance and links the second model to the first. Both must be registered
 and configured to each other. This is a Two way linking.
 
+ManyModel.unlink\[type](otherModel.\_id) : Removes links both ways.
+
  Ex:
  ```
 Author.registerLinkableType(Book, "book");
@@ -103,6 +105,10 @@ If you want to contribute, pleas do.
 you will need to export it to your shell.
 export PACKAGE_DIRS="$HOME/Documents/packs"
 "$HOME/Documents/packs" should be the directory that is above your clone.
+
+if your testing the package by using it in a meteor project then
+meteor remove dylankoji:many-to-many from your test app
+and then add it back into your test app
 
 reference:
 https://themeteorchef.com/recipes/writing-a-package/#tmc-local-packages

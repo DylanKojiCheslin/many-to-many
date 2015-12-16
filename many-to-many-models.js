@@ -43,6 +43,12 @@ addLinkToModel = function(model, linkID, schemaString) {
     model.update({$addToSet : query});
 }
 
+removeLinkToModel = function(model, linkID, schemaString) {
+  var query = {};
+  query[schemaString] = linkID;
+  model.update({$pull: query});
+}
+
 configureLinkableType = function(collection, model, type) {
   addLinkSchema(collection);
   var schemaString = "links." + type;
@@ -54,7 +60,7 @@ configureLinkableType = function(collection, model, type) {
     };
     collection.appendSchema(schemaObject);
 	var upperCaseString = type.charAt(0).toUpperCase() + type.slice(1);
-  
+
   //add
 	addMethodToModel(collection, 'add', upperCaseString, function(linkID){
 	   addLinkToModel(this, linkID, schemaString);
@@ -67,6 +73,16 @@ configureLinkableType = function(collection, model, type) {
     model.collection.find(linkID).forEach(function(linkedModel){
       var linkedSchemaString = 'links.' +  that._objectType;
       addLinkToModel(linkedModel, that._id, linkedSchemaString);
+    });
+  });
+
+  //unlink
+  addMethodToModel(collection, 'unlink', upperCaseString, function(linkID){
+    removeLinkToModel(this, linkID, schemaString);
+    var that = this;
+    model.collection.find(linkID).forEach(function(linkedModel){
+      var linkedSchemaString = 'links.' +  that._objectType;
+      removeLinkToModel(linkedModel, that._id, linkedSchemaString);
     });
   });
 
