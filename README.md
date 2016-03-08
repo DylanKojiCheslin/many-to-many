@@ -86,7 +86,7 @@ this.linkBook(someBook.\_id);
 this.getLinkedBook(someBook.\_id);
 ```
 
-Outside a data contest find and reference:
+Outside a data context find and reference:
 ```
 var smartyPants = AuthorCollection.findOne()
 smartyPants.addBook(someBook.\_id)

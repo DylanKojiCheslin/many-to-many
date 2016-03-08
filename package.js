@@ -1,7 +1,7 @@
 Package.describe({
     name: "dylankoji:many-to-many",
     summary: "A package making linking of many models with many other models possible",
-    version: "1.1.0",
+    version: "1.1.1",
     git: "https://github.com/DylanKojiCheslin/many-to-many",
     documentation: "README.md"
 });

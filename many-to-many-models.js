@@ -15,6 +15,9 @@ addLinkSchema = function() {
       "links" : {
         type : Object,
         optional : true,
+        autoform: {
+          type: "hidden",
+        },
       }
     });
   };
